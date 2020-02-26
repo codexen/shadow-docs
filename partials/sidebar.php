@@ -1,4 +1,3 @@
-<?php $current_page = basename($_SERVER['REQUEST_URI'], '.php') ?>
 <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
         <!-- sidebar-brand  -->
@@ -28,29 +27,17 @@
                         </ul>
                     </div>
                 </li>
-                <li class="sidebar-dropdown 
-                <?= ($current_page == 'routing' || 
-                     $current_page == 'middleware' || 
-                     $current_page == 'csrf-protection' ||
-                     $current_page == 'controllers' ||
-                     $current_page == 'requests'
-                ) ? ' active' : ''; ?>">
+                <li class="sidebar-dropdown">
                     <a href="#"> <i class="fa fa-list"></i> <span class="menu-text">The Basics</span></a>
-                    <div class="sidebar-submenu" <?= ($current_page == 'routing' || 
-                        $current_page == 'middleware' || 
-                        $current_page == 'csrf-protection' ||
-                        $current_page == 'controllers' ||
-                        $current_page == 'requests'
-                    ) ? ' style="display: block;"' : ''; ?>
-                    >
+                    <div class="sidebar-submenu" >
                         <ul>
-                            <li class="<?= ($current_page == 'routing') ? ' active' : ''; ?>"> <a href="routing.php">Routing</a> </li>
-                            <li class="<?= ($current_page == 'middleware') ? ' active' : ''; ?>"> <a href="middleware.php">Middleware</a> </li>
-                            <li class="<?= ($current_page == 'csrf-protection') ? ' active' : ''; ?>"> 
+                            <li class=""> <a href="routing.php">Routing</a> </li>
+                            <li class=""> <a href="middleware.php">Middleware</a> </li>
+                            <li class=""> 
                                 <a href="csrf-protection.php">CSRF Protection</a>
                             </li>
-                            <li class="<?= ($current_page == 'controllers') ? ' active' : ''; ?>"> <a href="controllers.php">Controllers</a> </li>
-                            <li class="<?= ($current_page == 'requests') ? ' active' : ''; ?>"> <a href="requests.php">Requests</a> </li>
+                            <li class=""> <a href="controllers.php">Controllers</a> </li>
+                            <li class=""> <a href="requests.php">Requests</a> </li>
                             <li> <a href="#">Responses</a> </li>
                             <li> <a href="#">Views</a> </li>
                             <li> <a href="#">URL Generation</a> </li>
