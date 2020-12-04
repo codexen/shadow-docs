@@ -1,4 +1,12 @@
 jQuery(function ($) {
+    var pathname = window.location.pathname.split('/').pop();
+    $('.main-nav-link').each(function(j, obj) {
+        if($(this).attr('href') == pathname) {
+            $(this).parent('li').addClass('active');
+            $(this).parent('li').parents('.sidebar-submenu').css("display","block");
+            $(this).parent('li').parents('.sidebar-dropdown').addClass('active');
+        }
+    });
 
     // Dropdown menu
     $(".sidebar-dropdown > a").click(function () {

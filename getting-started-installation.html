@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="page-wrapper toggled light-theme">
-         <nav id="sidebar" class="sidebar-wrapper">
+        <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand text-white font-weight-bold">Shadow Documentation</div>
@@ -189,7 +189,27 @@ composer install</code></pre>
                             <p>If you have PHP installed locally and you would like to use PHP's built-in development server to serve your application, you may use the server Kapitan command. This command will start a development server at <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
 
                             <figure class="highlight">
+                                <h6>To start the server in default port 8000</h6>
                                 <pre><code class="language-php" data-lang="php">php kapitan server</code></pre>
+                                
+                                <h6>To start the server in port 9000</h6>
+                                <pre><code class="language-php" data-lang="php">php kapitan server 9000</code></pre>
+                            </figure>
+                        </div>
+
+                        <hr class="my-3">
+                        <div id="section-4">
+                            <h3>Generate application key</h3>
+                            <figure class="highlight">
+                                <pre><code class="language-php" data-lang="php">php kapitan generate:key</code></pre>
+                            </figure>
+                        </div>
+
+                        <hr class="my-3">
+                        <div id="section-5">
+                            <h3>Backup database</h3>
+                            <figure class="highlight">
+                                <pre><code class="language-php" data-lang="php">php kapitan database:backup filename</code></pre>
                             </figure>
                         </div>
                     </article>

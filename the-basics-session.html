@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="page-wrapper toggled light-theme">
-         <nav id="sidebar" class="sidebar-wrapper">
+        <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand text-white font-weight-bold">Shadow Documentation</div>
@@ -126,7 +126,7 @@
                             <ol class="breadcrumb d-none d-lg-inline-flex m-0">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                 <li class="breadcrumb-item"><a href="">Getting Started</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Installation</li>
+                                <li class="breadcrumb-item active" aria-current="page">Sessions</li>
                             </ol>
                         </nav>
                     </div>
@@ -135,63 +135,51 @@
                 <div class="row p-lg-4">
                     <article class="main-content col-md-9 pr-lg-5">
                         <!-- title -Add bootstrap helpers for spacing -->
-                        <h1 class="mb-2 mt-3">Installation</h1>
+                        <h1 class="mb-2 mt-3">Sessions</h1>
                         <ul class="basic-nav">
-                            <li> <a href="#section-1">Server Requirement</a> </li>
-                            <li> <a href="#section-2">Installing Shadow</a> </li>
-                            <li> <a href="#section-3">Local Development Server</a> </li>
+                            <li> <a href="#section-1">Retrieving Data</a> </li>
+                            <li> <a href="#section-2">Retrieving All Session Data</a> </li>
+                            <li> <a href="#section-3">Determining If An Item Exists In The Session</a> </li>
+                            <li> <a href="#section-4">Storing Data</a> </li>
+                            <li> <a href="#section-5">Deleting Data</a> </li>
                         </ul>
                         <hr class="my-3">
 
                         <div id="section-1">
-                            <h3>Server Requirements</h3>
-                            <p>The Shadow framework has a few system requirements.You will need to make sure your server meets the following requirements:</p>
-                            <div class="content-list">
-                                <ul>
-                                    <li>PHP &gt;= 7.2.0</li>
-                                    <li>BCMath PHP Extension</li>
-                                    <li>Ctype PHP Extension</li>
-                                    <li>JSON PHP Extension</li>
-                                    <li>Mbstring PHP Extension</li>
-                                    <li>OpenSSL PHP Extension</li>
-                                    <li>PDO PHP Extension</li>
-                                    <li>Tokenizer PHP Extension</li>
-                                    <li>XML PHP Extension</li>
-                                </ul>
-                            </div>
-                            <hr class="my-3">
-                        </div>
-
-                        <div id="section-2">
-                            <h3>Installing Shadow</h3>
-                            <h6 class="font-weight-bold mb-2">
-                                Via Composer Create-Project
-                            </h6>
-                            <p> You may install Shadow by issuing the Composer create-project command in your terminal:</p>
-                            <figure class="highlight">
-                                <pre><code class="language-php" data-lang="php">composer create-project --prefer-dist codexen/shadow blog</code></pre>
-                            </figure>
-                            <br>
-
-                            <h6 class="font-weight-bold mb-2">
-                                Via Git
-                            </h6>
-                            <p> Also you may install Shadow by issuing the Git clone command in your terminal:</p>
-                            <figure class="highlight">
-                                <pre><code class="language-php" data-lang="php">git clone https://github.com/codexen/shadow.git blog
-
-composer install</code></pre>
-                            </figure>
+                            <h3>Retrieving Data</h3>
+     
+                            <pre><code class="language-php">$_SESSION['user_id']</code></pre>
                         </div>
                         <hr class="my-3">
-                        <div id="section-3">
-                            <h3>Local Development Server</h3>
-                            <p>If you have PHP installed locally and you would like to use PHP's built-in development server to serve your application, you may use the server Kapitan command. This command will start a development server at <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
 
-                            <figure class="highlight">
-                                <pre><code class="language-php" data-lang="php">php kapitan server</code></pre>
-                            </figure>
+                        <div id="section-2">
+                            <h3>Retrieving All Session Data</h3>
+     
+                            <pre><code class="language-php">$_SESSION</code></pre>
                         </div>
+                        <hr class="my-3">
+
+                        <div id="section-1">
+                            <h3>Determining If An Item Exists In The Session</h3>
+     
+                            <pre><code class="language-php">if (isset($_SESSION['user_id'])</code></pre>
+                        </div>
+                        <hr class="my-3">
+
+                        <div id="section-1">
+                            <h3>Storing Data</h3>
+     
+                            <pre><code class="language-php">$_SESSION['user_id'] = $user->id;</code></pre>
+                        </div>
+                        <hr class="my-3">
+
+                        <div id="section-1">
+                            <h3>Deleting Data</h3>
+     
+                            <pre><code class="language-php">unset($_SESSION['user_id']);</code></pre>
+                        </div>
+                        <hr class="my-3">
+
                     </article>
                     <aside class="col-md-3 d-none d-md-block border-left">
                         <div class="widget widget-support-forum p-md-3 p-sm-2"> 

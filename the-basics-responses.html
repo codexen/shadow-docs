@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="page-wrapper toggled light-theme">
-         <nav id="sidebar" class="sidebar-wrapper">
+        <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand text-white font-weight-bold">Shadow Documentation</div>
@@ -126,7 +126,7 @@
                             <ol class="breadcrumb d-none d-lg-inline-flex m-0">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                 <li class="breadcrumb-item"><a href="">Getting Started</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Installation</li>
+                                <li class="breadcrumb-item active" aria-current="page">Requests</li>
                             </ol>
                         </nav>
                     </div>
@@ -135,63 +135,28 @@
                 <div class="row p-lg-4">
                     <article class="main-content col-md-9 pr-lg-5">
                         <!-- title -Add bootstrap helpers for spacing -->
-                        <h1 class="mb-2 mt-3">Installation</h1>
+                        <h1 class="mb-2 mt-3">Responses</h1>
                         <ul class="basic-nav">
-                            <li> <a href="#section-1">Server Requirement</a> </li>
-                            <li> <a href="#section-2">Installing Shadow</a> </li>
-                            <li> <a href="#section-3">Local Development Server</a> </li>
+                            <li> <a href="#section-1">Strings and Arrays</a> </li>
                         </ul>
                         <hr class="my-3">
 
                         <div id="section-1">
-                            <h3>Server Requirements</h3>
-                            <p>The Shadow framework has a few system requirements.You will need to make sure your server meets the following requirements:</p>
-                            <div class="content-list">
-                                <ul>
-                                    <li>PHP &gt;= 7.2.0</li>
-                                    <li>BCMath PHP Extension</li>
-                                    <li>Ctype PHP Extension</li>
-                                    <li>JSON PHP Extension</li>
-                                    <li>Mbstring PHP Extension</li>
-                                    <li>OpenSSL PHP Extension</li>
-                                    <li>PDO PHP Extension</li>
-                                    <li>Tokenizer PHP Extension</li>
-                                    <li>XML PHP Extension</li>
-                                </ul>
-                            </div>
+                            <h3>Strings and Arrays</h3>
+                            <p>All routes and controllers should return a response to be sent back to the user's browser. Shadow provides several different ways to return responses. The most basic response is returning a string from a route or controller. The framework will automatically convert the string into a full HTTP response:</p>
+
+<pre><code class="language-php">$router->get('/', function() {
+    return 'Hello world';
+});
+</code></pre>
                             <hr class="my-3">
+                            <p>In addition to returning strings from your routes and controllers, you may also return arrays. The framework will automatically convert the array into a JSON response:</p>
+<pre><code class="language-php">$router->get('/', function() {
+    return json_encode([1,2,3]);
+});
+</code></pre>
                         </div>
 
-                        <div id="section-2">
-                            <h3>Installing Shadow</h3>
-                            <h6 class="font-weight-bold mb-2">
-                                Via Composer Create-Project
-                            </h6>
-                            <p> You may install Shadow by issuing the Composer create-project command in your terminal:</p>
-                            <figure class="highlight">
-                                <pre><code class="language-php" data-lang="php">composer create-project --prefer-dist codexen/shadow blog</code></pre>
-                            </figure>
-                            <br>
-
-                            <h6 class="font-weight-bold mb-2">
-                                Via Git
-                            </h6>
-                            <p> Also you may install Shadow by issuing the Git clone command in your terminal:</p>
-                            <figure class="highlight">
-                                <pre><code class="language-php" data-lang="php">git clone https://github.com/codexen/shadow.git blog
-
-composer install</code></pre>
-                            </figure>
-                        </div>
-                        <hr class="my-3">
-                        <div id="section-3">
-                            <h3>Local Development Server</h3>
-                            <p>If you have PHP installed locally and you would like to use PHP's built-in development server to serve your application, you may use the server Kapitan command. This command will start a development server at <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
-
-                            <figure class="highlight">
-                                <pre><code class="language-php" data-lang="php">php kapitan server</code></pre>
-                            </figure>
-                        </div>
                     </article>
                     <aside class="col-md-3 d-none d-md-block border-left">
                         <div class="widget widget-support-forum p-md-3 p-sm-2"> 
